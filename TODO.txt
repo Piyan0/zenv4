@@ -1,5 +1,5 @@
 make map id more efficent, currently there is still a lot of repeat.
-event initial idle animation if idle animation exists. with the direction, so when map is refreshed check event_page.direction and check for the idle anim, if so, call event.play_animation(idle_dir)
+devent initial idle animation if idle animation exists. with the direction, so when map is refreshed check event_page.direction and check for the idle anim, if so, call event.play_animation(idle_dir)
 make event id more efficient, increment number, so one event can have same name, but the id is always the different.
 add window to set variable and switch and items.
 
