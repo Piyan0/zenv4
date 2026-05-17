@@ -3,6 +3,3 @@
 [ext_resource type="PackedScene" uid="uid://cn4a1buk2tejm" path="res://levels/map_base.tscn" id="1_tysbb"]
 
 [node name="MapBase" unique_id=279109716 instance=ExtResource("1_tysbb")]
-
-[node name="Sprite2D" parent="." index="0" unique_id=1877365204]
-modulate = Color(1, 1, 1, 1)

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b5io0t4608hun"]
 
 [ext_resource type="Script" uid="uid://carhvu72lj8l8" path="res://entities/sokoban_minigame/sokoban_box.gd" id="1_idbu1"]
-[ext_resource type="Texture2D" uid="uid://otoioodij3el" path="res://assets/16px.png" id="2_7w5qd"]
+[ext_resource type="Texture2D" uid="uid://c7yeecgjgc5g0" path="res://assets/16px.png" id="2_7w5qd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7w5qd"]
 size = Vector2(16, 16)

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="WalkAnimationCollection" load_steps=6 format=3 uid="uid://dqjfyf13lugcb"]
+[gd_resource type="Resource" script_class="WalkAnimationCollection" format=3 uid="uid://dqjfyf13lugcb"]
 
 [ext_resource type="Script" uid="uid://dppwvvxbnd1y3" path="res://commons/walk_animation_collection.gd" id="1_yfunc"]
 [ext_resource type="Resource" uid="uid://fx3fac50tlk4" path="res://vault/animation_data/demo/walk_down.tres" id="2_r0bkh"]

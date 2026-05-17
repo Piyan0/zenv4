@@ -7,15 +7,10 @@ func get_data():
     
 func _get_portrait_data():
     var data = {}
-    data["fred"] = {
-        "name" : "Fred",
-        "img_id" : "img_fred_portrait"
+    data["id"] = {
+        "name" : "name",
+        "img_id" : "img_id"
     }
-    data["chloe"] = {
-        "name" : "Chloè",
-        "img_id" : "img_chloe_portrait"
-    }
-    
     return data
     
     

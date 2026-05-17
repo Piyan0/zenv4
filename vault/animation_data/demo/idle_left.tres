@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="AnimationData" load_steps=3 format=3 uid="uid://devhtq3gs3an"]
+[gd_resource type="Resource" script_class="AnimationData" format=3 uid="uid://devhtq3gs3an"]
 
 [ext_resource type="Script" uid="uid://dsnkbelrc631k" path="res://commons/animation_process/animation_data.gd" id="1_83xhh"]
-[ext_resource type="Texture2D" uid="uid://b4wxpxxyx34wl" path="res://assets/Alex_idle_anim_16x16.png" id="2_p7vy0"]
+[ext_resource type="Texture2D" uid="uid://bmp7seev11vsi" path="res://assets/Alex_idle_anim_16x16.png" id="2_p7vy0"]
 
 [resource]
 script = ExtResource("1_83xhh")

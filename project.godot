@@ -8,18 +8,13 @@
 
 config_version=5
 
-[animation]
-
-compatibility/default_parent_skeleton_in_mesh_instance_3d=true
-
 [application]
 
-config/name="Du Jeu Au Nous"
-run/main_scene="uid://buxp0irvissen"
+run/main_scene="uid://c7we1jnxdpeub"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
-config/icon="uid://ladfwp3l7pxl"
+config/icon="uid://ctvoca068pgkm"
 run/main_scene.editor="uid://ekl6egoo7ssq"
 
 [autoload]
@@ -104,10 +99,6 @@ ui_down={
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
-
-[internationalization]
-
-locale/translations=PackedStringArray("res://vault/translations/001.en_US.translation", "res://vault/translations/001.id_ID.translation", "res://vault/translations/002.en_US.translation", "res://vault/translations/002.id_ID.translation", "res://vault/translations/003.en_US.translation", "res://vault/translations/003.id_ID.translation", "res://vault/translations/004.en_US.translation", "res://vault/translations/004.id_ID.translation", "res://vault/translations/chloe/dialogue_translation.en_US.translation", "res://vault/translations/chloe/dialogue_translation.fr_FR.translation", "res://vault/translations/chloe/translation2.en_US.translation", "res://vault/translations/chloe/translation2.fr_FR.translation", "res://vault/translations/chloe/translation.en_US.translation", "res://vault/translations/chloe/translation.fr_FR.translation")
 
 [layer_names]
 

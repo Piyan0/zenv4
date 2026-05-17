@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="EventPage" load_steps=8 format=3 uid="uid://bimn5trws3w2u"]
+[gd_resource type="Resource" script_class="EventPage" format=3 uid="uid://bimn5trws3w2u"]
 
 [ext_resource type="Script" uid="uid://dth0j1qqlqe57" path="res://entities/event/event_trait.gd" id="1_3r4rj"]
-[ext_resource type="Texture2D" uid="uid://c054b3via74hc" path="res://assets/bit.png" id="2_0pcv0"]
+[ext_resource type="Texture2D" uid="uid://diybx3jcbvgvj" path="res://assets/bit.png" id="2_0pcv0"]
 [ext_resource type="Script" uid="uid://c3bjilqd18jq" path="res://entities/event/event_page.gd" id="2_ulqyq"]
 [ext_resource type="Script" uid="uid://bem3pvtqt554f" path="res://entities/event/static_event_command.gd" id="4_0pcv0"]
 [ext_resource type="Script" uid="uid://udvneqyhy02s" path="res://vault/static_event_commands/StaticCommandDialogue.gd" id="5_tpo83"]
@@ -17,18 +17,8 @@ metadata/_custom_type_script = "uid://udvneqyhy02s"
 
 [resource]
 script = ExtResource("2_ulqyq")
-event_commands_id = 2
 graphic = SubResource("AtlasTexture_tpo83")
-offset = Vector2(0, -16)
-trigger = 1
-placement = 2
 i_switch = 1
-variable = "empty"
-variable_value = -1
-global_switch_001 = "empty"
-global_switch_001_value = false
-global_switch_002 = "empty"
-global_switch_002_value = false
-event_traits = Array[ExtResource("1_3r4rj")]([])
+event_commands_id = 2
 static_command_list = Array[ExtResource("4_0pcv0")]([SubResource("Resource_r6pk7")])
 metadata/_custom_type_script = "uid://c3bjilqd18jq"

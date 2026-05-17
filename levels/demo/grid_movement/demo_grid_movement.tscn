@@ -1,13 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0hepi1oaq3ce"]
+[gd_scene format=3 uid="uid://c0hepi1oaq3ce"]
 
 [ext_resource type="Script" uid="uid://d2bcd0vn3wmul" path="res://levels/demo/grid_movement/demo_grid_movement.gd" id="1_646yr"]
-[ext_resource type="Texture2D" uid="uid://otoioodij3el" path="res://assets/16px.png" id="2_vgt3o"]
+[ext_resource type="Texture2D" uid="uid://c7yeecgjgc5g0" path="res://assets/16px.png" id="2_vgt3o"]
 
-[node name="DemoGridMovement" type="Node2D" node_paths=PackedStringArray("x")]
+[node name="DemoGridMovement" type="Node2D" unique_id=1615884084 node_paths=PackedStringArray("x")]
 script = ExtResource("1_646yr")
 x = NodePath("Sprite2D")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1651380772]
 position = Vector2(16, 16)
 texture = ExtResource("2_vgt3o")
 centered = false

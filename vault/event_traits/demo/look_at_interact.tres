@@ -1,9 +1,7 @@
-[gd_resource type="Resource" script_class="TraitLookAtInteract" load_steps=3 format=3 uid="uid://6cgkwb1ufa2g"]
+[gd_resource type="Resource" script_class="TraitLookAtInteract" format=3 uid="uid://6cgkwb1ufa2g"]
 
 [ext_resource type="Script" uid="uid://crp6nufhjoe1n" path="res://entities/event/traits/look_at_interact.gd" id="2_q53sv"]
-[ext_resource type="Resource" uid="uid://c0ktlvd3svwu6" path="res://vault/event_traits/demo/idle.tres" id="2_va4tv"]
 
 [resource]
 script = ExtResource("2_q53sv")
-trait_idle = ExtResource("2_va4tv")
 metadata/_custom_type_script = "uid://crp6nufhjoe1n"

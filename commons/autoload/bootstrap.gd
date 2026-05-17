@@ -9,10 +9,8 @@ var world_canvas
 var items_database: ItemsDatabase
 var save_system
 var audio_manager: AudioManager
-var input_filter: InputFilter
 
 func _enter_tree():
-    input_filter = InputFilter.new(); add_child(input_filter)
     canvas= _add_canvas()
     world_canvas = _add_world_canvas()
     _create_mobile_control()
@@ -69,14 +67,7 @@ func _boot_progression():
     func(it_switch, vars, gb_switch, tag_list):
         event_manager.refresh_map(it_switch, vars, gb_switch, tag_list)
         if Player.instance:
-            Player.instance.update_active_animation(gb_switch)
-        
-        if input_filter.is_multiplayer:
-            var chloe_session = gb_switch["chloe_session"]
-            if chloe_session:
-                input_filter.set_allow_input("player_1")
-            else:
-                input_filter.set_allow_input("player_2")
+            Player.instance.update_active_animation(gb_switch)   
     )
     
     return progression
@@ -116,8 +107,8 @@ func _create_event_manager():
     
     
 func _create_mobile_control():
-    # if OS.get_name() == "Windows" && OS.is_debug_build():
-        # return
+    if OS.get_name() == "Windows" && OS.is_debug_build():
+        return
         
     var mobile_control = MobileControl.spawn()
     if mobile_control != null:

@@ -1,4 +1,4 @@
-[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://3wboop2jrvep"]
+[gd_resource type="LabelSettings" format=3 uid="uid://3wboop2jrvep"]
 
 [ext_resource type="FontFile" uid="uid://3oo4xutx04g7" path="res://assets/fonts/monogram.ttf" id="1_hww5c"]
 

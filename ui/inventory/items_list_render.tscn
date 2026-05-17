@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://c8iunodlm4uqo"]
+[gd_scene format=3 uid="uid://c8iunodlm4uqo"]
 
 [ext_resource type="Script" uid="uid://b2trch5278cac" path="res://ui/inventory/items_list_render.gd" id="1_dc0f8"]
 
-[node name="ItemsListRender" type="Control" node_paths=PackedStringArray("container")]
+[node name="ItemsListRender" type="Control" unique_id=1680361556 node_paths=PackedStringArray("container")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,7 +14,7 @@ container = NodePath("VBoxContainer")
 items_id = Array[int]([1, 2, 1])
 end_action = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=757768024]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0

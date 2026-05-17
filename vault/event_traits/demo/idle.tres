@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="TraitIdleAnimation" load_steps=6 format=3 uid="uid://c0ktlvd3svwu6"]
+[gd_resource type="Resource" script_class="TraitIdleAnimation" format=3 uid="uid://c0ktlvd3svwu6"]
 
 [ext_resource type="Resource" uid="uid://byhx82ux8bhtf" path="res://vault/animation_data/demo/idle_down.tres" id="2_ctbms"]
 [ext_resource type="Resource" uid="uid://devhtq3gs3an" path="res://vault/animation_data/demo/idle_left.tres" id="3_rheou"]
@@ -12,6 +12,4 @@ idle_up = ExtResource("5_l5vit")
 idle_down = ExtResource("2_ctbms")
 idle_left = ExtResource("3_rheou")
 idle_right = ExtResource("4_xj2e7")
-always_on = false
-direction = 0
 metadata/_custom_type_script = "uid://6isaotyq7o11"

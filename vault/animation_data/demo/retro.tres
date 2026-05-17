@@ -1,15 +1,15 @@
-[gd_resource type="Resource" script_class="AnimationData" load_steps=3 format=3 uid="uid://b0ji5submksgn"]
+[gd_resource type="Resource" script_class="AnimationData" format=3 uid="uid://b0ji5submksgn"]
 
 [ext_resource type="Script" uid="uid://dsnkbelrc631k" path="res://commons/animation_process/animation_data.gd" id="1_oplp8"]
-[ext_resource type="Texture2D" uid="uid://bha1crqyw2cnu" path="res://assets/character_17_frame16x20.png" id="2_w5hag"]
+
+[sub_resource type="Resource" id="Resource_oplp8"]
+metadata/__load_path__ = "res://assets/character_17_frame16x20.png"
 
 [resource]
 script = ExtResource("1_oplp8")
-texture = ExtResource("2_w5hag")
+texture = SubResource("Resource_oplp8")
 columns = 3
-delay_each_frame = 0.2
 is_loop = true
 frames_index = Array[int]([0, 1, 2, 1])
 tile_size = Vector2(16, 20)
-offset = Vector2(0, 0)
 metadata/_custom_type_script = "uid://dsnkbelrc631k"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cd8t01ocegbc8"]
+[gd_scene format=3 uid="uid://cd8t01ocegbc8"]
 
 [ext_resource type="Script" uid="uid://dbpdcs7r8lnes" path="res://entities/event/traits/trait_wandering/trait_wandering_node.gd" id="1_ty1x0"]
 
@@ -8,18 +8,18 @@ size = Vector2(16, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ty1x0"]
 size = Vector2(14, 14)
 
-[node name="TraitWanderingNode" type="Node2D" node_paths=PackedStringArray("ray", "claim_tile_area")]
+[node name="TraitWanderingNode" type="Node2D" unique_id=1183557286 node_paths=PackedStringArray("ray", "claim_tile_area")]
 script = ExtResource("1_ty1x0")
 ray = NodePath("ShapeCast2D")
 claim_tile_area = NodePath("Area2D")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=653111974]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=330786577]
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_0hr0e")
 
-[node name="ShapeCast2D" type="ShapeCast2D" parent="."]
+[node name="ShapeCast2D" type="ShapeCast2D" parent="." unique_id=812078809]
 modulate = Color(1, 1, 1, 0.396078)
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_ty1x0")

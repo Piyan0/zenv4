@@ -1,8 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dku64chs35fsw"]
+[gd_scene format=3 uid="uid://dku64chs35fsw"]
 
 [ext_resource type="Script" uid="uid://cpuurkkj4ksm7" path="res://commons/map.gd" id="1_goqpi"]
 
-[node name="PiyanRoom03" type="Node2D"]
+[node name="PiyanRoom03" type="Node2D" unique_id=1666216881]
 script = ExtResource("1_goqpi")
-map_id = "piyan_room_03"
 metadata/_custom_type_script = "uid://cpuurkkj4ksm7"

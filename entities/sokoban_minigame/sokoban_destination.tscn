@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://sdtrfntcwwyn"]
 
 [ext_resource type="Script" uid="uid://8ht6hmesajq1" path="res://entities/sokoban_minigame/sokoban_destination.gd" id="1_8peso"]
-[ext_resource type="Texture2D" uid="uid://otoioodij3el" path="res://assets/16px.png" id="2_bapko"]
+[ext_resource type="Texture2D" uid="uid://c7yeecgjgc5g0" path="res://assets/16px.png" id="2_bapko"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8peso"]
 size = Vector2(14, 14)

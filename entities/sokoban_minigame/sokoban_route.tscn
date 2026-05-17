@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://blivdvtexin0w"]
 
-[ext_resource type="Texture2D" uid="uid://otoioodij3el" path="res://assets/16px.png" id="1_15pv1"]
+[ext_resource type="Texture2D" uid="uid://c7yeecgjgc5g0" path="res://assets/16px.png" id="1_15pv1"]
 
 [node name="Route" type="Sprite2D" unique_id=769394905]
 texture = ExtResource("1_15pv1")

@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://c7we1jnxdpeub"]
 
 [ext_resource type="Script" uid="uid://k5lvxw6c0876" path="res://levels/demo/piyan_room/01/main.gd" id="1_3m4ff"]
+[ext_resource type="PackedScene" uid="uid://dyk86kgdrft2x" path="res://entities/player/player.tscn" id="2_gb68a"]
 
 [node name="Main" type="Node2D" unique_id=1060824142]
 y_sort_enabled = true
 script = ExtResource("1_3m4ff")
-map_id = "piyan_room_01"
+
+[node name="Player" parent="." unique_id=503484590 instance=ExtResource("2_gb68a")]

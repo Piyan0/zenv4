@@ -1,11 +1,10 @@
 [gd_scene format=3 uid="uid://dyk86kgdrft2x"]
 
 [ext_resource type="Script" uid="uid://b1luavvlxm1ak" path="res://entities/player/player.gd" id="1_sglur"]
-[ext_resource type="Texture2D" uid="uid://b4wxpxxyx34wl" path="res://assets/Alex_idle_anim_16x16.png" id="2_bls4j"]
+[ext_resource type="Texture2D" uid="uid://bmp7seev11vsi" path="res://assets/Alex_idle_anim_16x16.png" id="2_bls4j"]
 [ext_resource type="Script" uid="uid://cu54lgwjyo2bn" path="res://commons/player_animation_collection.gd" id="2_qiwj3"]
 [ext_resource type="Script" uid="uid://b33r1rec7b2nn" path="res://commons/behaviors/input_grid_movement.gd" id="2_sglur"]
-[ext_resource type="Resource" uid="uid://ckso1s44v0kq2" path="res://vault/player_animations/fred_anims.tres" id="3_qiwj3"]
-[ext_resource type="Resource" uid="uid://ixcm7otsunw3" path="res://vault/player_animations/chloe_anims.tres" id="4_26q78"]
+[ext_resource type="Resource" uid="uid://dy4vqjmpxfpy5" path="res://vault/animation_data/player_anim.tres" id="3_qiwj3"]
 [ext_resource type="Script" uid="uid://crrbtwoclhcmy" path="res://commons/animation_process/animation_process.gd" id="8_a1qjk"]
 [ext_resource type="Script" uid="uid://nag5gx806bqk" path="res://entities/player/player_event_actions.gd" id="13_j3ovn"]
 
@@ -20,7 +19,7 @@ size = Vector2(16, 16)
 z_index = 10
 script = ExtResource("1_sglur")
 area = NodePath("Area2D")
-player_animations = Array[ExtResource("2_qiwj3")]([ExtResource("3_qiwj3"), ExtResource("4_26q78")])
+player_animations = Array[ExtResource("2_qiwj3")]([ExtResource("3_qiwj3")])
 initial_direction = 2
 animation_process = NodePath("AnimationProcess")
 grid_mov = NodePath("GridMovement")
