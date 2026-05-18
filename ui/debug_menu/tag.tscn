@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bf36ojcp7h6bt"]
+
+[ext_resource type="Texture2D" uid="uid://ca6uh7xd2riix" path="res://ui/debug_menu/icon_tag.png" id="1_7ijc6"]
+[ext_resource type="Script" uid="uid://jqs4fe31xhx3" path="res://ui/debug_menu/tag.gd" id="1_jn4ok"]
+
+[node name="Tag" type="MarginContainer" unique_id=598477684 node_paths=PackedStringArray("lb_id", "btn")]
+script = ExtResource("1_jn4ok")
+lb_id = NodePath("HBoxContainer/Label")
+btn = NodePath("Button")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1868260558]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=877474267]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_7ijc6")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=199767797]
+layout_mode = 2
+text = "Anjay"
+
+[node name="Button" type="Button" parent="." unique_id=1909454972]
+layout_mode = 2
+flat = true

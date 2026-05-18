@@ -1,5 +1,6 @@
 extends Control
 
+signal variable_changed(id, value)
 
 @export var ph_variable_control: Node
 
@@ -40,4 +41,7 @@ func _ready() -> void:
         var control =(ph_variable_control as InstancePlaceholder).create_instance()
         control.id = switch_key
         control.value = switch_list[switch_key]
+        control.variable_changed.connect(func(value):
+            variable_changed.emit(control.id, value)
+        )
     

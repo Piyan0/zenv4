@@ -1,6 +1,7 @@
-extends Control
+extends switch_control
 
-@export var ph_switch_control: Node
+signal switch_toggled(id, value)
+@export var ph_switch_switch_control: Node
 
 var switch_list = {
     switch_01 = false,
@@ -41,10 +42,11 @@ var switch_list = {
 
 
 func _ready() -> void:
-    var switch_control_list = []
     for switch_key in switch_list.keys():
-        var control =(ph_switch_control as InstancePlaceholder).create_instance()
-        control.id = switch_key
-        control.value = switch_list[switch_key]
-        switch_control_list.append(control)
-    
+        var switch_control =(ph_switch_switch_control as InstancePlaceholder).create_instance()
+        switch_control.id = switch_key
+        switch_control.value = switch_list[switch_key]
+        switch_control.switch_toggled.connect(func(value):
+            switch_toggled.emit(switch_control.id, value)
+        )
+        

@@ -25,6 +25,7 @@ label_settings = SubResource("LabelSettings_45gus")
 [node name="SpinBox" type="SpinBox" parent="VBoxContainer/HBoxContainer" unique_id=109660569]
 layout_mode = 2
 size_flags_horizontal = 10
+update_on_text_changed = true
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=1719673527]
 layout_mode = 2
