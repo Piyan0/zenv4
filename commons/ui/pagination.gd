@@ -1,4 +1,3 @@
-class_name Pagination
 extends Node
 signal on_page_changed()
 

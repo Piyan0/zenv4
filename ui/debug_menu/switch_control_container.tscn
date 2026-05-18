@@ -5,24 +5,42 @@
 [ext_resource type="Script" uid="uid://c7tkwhcv4dgve" path="res://ui/debug_menu/switch_control_container.gd" id="2_fsw8w"]
 [ext_resource type="PackedScene" uid="uid://p3dwtbrt41es" path="res://ui/arrow_navigate/arrow_navigate.tscn" id="4_fsw8w"]
 
-[node name="SwitchControlContainer" type="VBoxContainer" unique_id=177317883 node_paths=PackedStringArray("arrow_nav")]
-offset_right = 184.0
-offset_bottom = 139.0
+[node name="SwitchControlContainer" type="VBoxContainer" unique_id=177317883 node_paths=PackedStringArray("y")]
+offset_left = 10.0
+offset_top = 16.0
+offset_right = 194.0
+offset_bottom = 286.0
 size_flags_horizontal = 3
 theme = ExtResource("1_xtmb6")
 script = ExtResource("2_fsw8w")
-arrow_nav = NodePath("ArrowNavigate")
+y = NodePath("VBoxContainer")
 
-[node name="SwitchControl" parent="." unique_id=1469051680 instance=ExtResource("1_cnxkj")]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=70356097]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="SwitchControl" parent="VBoxContainer" unique_id=1469051680 instance=ExtResource("1_cnxkj")]
 layout_mode = 2
 
-[node name="SwitchControl2" parent="." unique_id=867266392 instance=ExtResource("1_cnxkj")]
+[node name="SwitchControl2" parent="VBoxContainer" unique_id=867266392 instance=ExtResource("1_cnxkj")]
 layout_mode = 2
 
-[node name="SwitchControl3" parent="." unique_id=1194363262 instance=ExtResource("1_cnxkj")]
+[node name="SwitchControl3" parent="VBoxContainer" unique_id=1194363262 instance=ExtResource("1_cnxkj")]
 layout_mode = 2
 
-[node name="ArrowNavigate" parent="." unique_id=494496901 instance=ExtResource("4_fsw8w")]
+[node name="SwitchControl4" parent="VBoxContainer" unique_id=1268224374 instance=ExtResource("1_cnxkj")]
+layout_mode = 2
+
+[node name="SwitchControl5" parent="VBoxContainer" unique_id=1233541235 instance=ExtResource("1_cnxkj")]
+layout_mode = 2
+
+[node name="SwitchControl6" parent="VBoxContainer" unique_id=671443784 instance=ExtResource("1_cnxkj")]
+layout_mode = 2
+
+[node name="SwitchControl7" parent="VBoxContainer" unique_id=2122687638 instance=ExtResource("1_cnxkj")]
+layout_mode = 2
+
+[node name="ArrowNavigate" parent="." unique_id=925588151 instance=ExtResource("4_fsw8w")]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10

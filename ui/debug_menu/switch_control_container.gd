@@ -1,10 +1,10 @@
 extends VBoxContainer
 
-
+@export var y: Control
 @export var arrow_nav: Control
 
 func _ready() -> void:
-    arrow_nav.page_changed.connect(func(page):
-        print(page)    
-    )
-    arrow_nav.setup(0, 20)
+    var x = GroupControl.new()
+    x.items = y.get_children()
+    x.parent = y
+    x.group()
