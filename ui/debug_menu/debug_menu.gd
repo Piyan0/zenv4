@@ -33,6 +33,7 @@ func _ready() -> void:
     )
 
     btn_toggle_visible.button_down.connect(func():
+        print("toggle")
         if controls_container.visible:
             controls_container.hide()
         else:
@@ -40,7 +41,7 @@ func _ready() -> void:
             switch_container.switch_list = progression_data[Progression.KEY_GLOBAL_SWITCHES]
             variable_container.variable_list = progression_data[Progression.KEY_VARIABLES]
             tag_container.available_tags = _get_available_tags()
-            tag_container.current_active_tags = progression_data[Progression.KEY_TAG]
+            tag_container.current_active_tags = progression_data[Progression.KEY_TAG].duplicate()
             controls_container.show()
     )
 

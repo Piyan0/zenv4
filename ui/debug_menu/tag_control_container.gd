@@ -32,7 +32,7 @@ func _ready():
             return
         current_active_tags.append(tag)
         print(">>", tag, current_active_tags)
-        # _sync_tags(current_active_tags)
+        _sync_tags(current_active_tags)
         tag_added.emit(tag)
     )
     
@@ -45,10 +45,10 @@ func _sync_tags(p_tags):
     for tag in p_tags:
         var ins = (ph_tag as InstancePlaceholder).create_instance()
         ins.id = tag
-        # ins.tag_clicked.connect(func(id):
-        #     current_active_tags.erase(id)
-        #     _sync_tags(current_active_tags)
-        #     tag_removed.emit(id)
-        # )
+        ins.tag_clicked.connect(func(id):
+            current_active_tags.erase(id)
+            _sync_tags(current_active_tags)
+            tag_removed.emit(id)
+        )
         _added_tags.append(ins)
     
