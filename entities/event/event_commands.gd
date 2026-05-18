@@ -14,6 +14,10 @@ func push(args = []):
     return await action.push(args)
 
 
+func pb(commands: Array):
+    await action.push_batch(commands)
+    
+
 func get_event_commands(key : int) -> Callable:
     if key in _commands:
         return _commands[key]

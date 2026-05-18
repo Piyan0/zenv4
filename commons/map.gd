@@ -50,7 +50,7 @@ func _add_event_id():
         label.text = "map_id = {map_id}".format(self)
         label.label_settings = load("uid://3wboop2jrvep")
         label.set_anchors_and_offsets_preset(Control.LayoutPreset.PRESET_BOTTOM_RIGHT)
-        Bootstrap.canvas.add_child.call_deferred(label)
+        #Bootstrap.canvas.add_child.call_deferred(label)
         tree_exited.connect(func():
             label.queue_free()
         )

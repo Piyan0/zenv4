@@ -228,7 +228,40 @@ func _init() -> void:
     
     _actions["rtag"] = func(tag):
         Bootstrap.progression.remove_tag(tag)
+    
+    _actions.text = func(str_arg):
+    
+        var arr = Array(str_arg.split(" @ "))
+        var speaker = arr.pop_front()
+        if !"dialogue" in _state:
+            _state.dialogue = [] as Array[DialogueBase.DialogueNormal]
+            
+        for msg in arr:
+            _state.dialogue.push_back(
+                DialogueBase.DialogueNormal.new(speaker, msg)
+            )
 
+            
+    _actions.textt = func(arg):
+       
+        var dialogue = load("uid://dws6emg1mc14n").instantiate()
+        #dialogue.portrait_data = DialoguePortraitData.new().get_data()
+        Bootstrap.canvas.add_child(dialogue)
+        dialogue.set_dialogue_batch(_state.dialogue)
+        await dialogue.dialogue_finished
+        _state.erase("dialogue")
+     
+
+func push_batch(commands: Array):
+    for i in commands:
+        var arr = Array(i.split(" "))
+        var args = i
+        var id = arr.pop_front()
+        assert(id in _actions, str(id))
+        var arg = " ".join(arr)
+        printt(id, arg)
+        await _actions[id].callv([arg])
+    
 # first element (at index 0 should be the key of '_actions', rest is call arguments.)
 func push(args = []):
     var id = args.pop_front()

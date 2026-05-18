@@ -1,7 +1,7 @@
 @tool
 extends EditorPlugin
 
-var _template_path = "res://script_templates/Node/event_commands_template.gd"
+var _template_path = "res://script_templates/EventCommands/event_commands_template.gd"
 var _generate_path = "res://vault/generated_event_command/"
 var _button: Button
 

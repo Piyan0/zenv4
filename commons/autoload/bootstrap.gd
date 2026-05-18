@@ -108,6 +108,7 @@ func _create_event_manager():
     
     
 func _create_mobile_control():
+    return
     if OS.get_name() == "Windows" && OS.is_debug_build():
         return
         
@@ -117,12 +118,25 @@ func _create_mobile_control():
 
 
 func _add_canvas():
+    var sub_v = SubViewport.new()
+    sub_v.transparent_bg = true
+    sub_v.snap_2d_transforms_to_pixel = true
+    sub_v.canvas_item_default_texture_filter = Viewport.DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_NEAREST
+    var subviewport_container = SubViewportContainer.new()
+    subviewport_container.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+    subviewport_container.set_anchors_and_offsets_preset(Control.LayoutPreset.PRESET_FULL_RECT)
+    subviewport_container.mouse_filter = Control.MOUSE_FILTER_IGNORE
+    subviewport_container.stretch = true
+    subviewport_container.stretch_shrink = 4
+    subviewport_container.add_child(sub_v)
     var cv= CanvasLayer.new()
     # other canvas layer should below this, as global_canvas is considered as high priority draw order.
     cv.layer= 10
     cv.name= "GlobalCanvas"
+    cv.add_child(subviewport_container)
     add_child(cv)
-    return cv
+    
+    return sub_v
 
 
 func _add_world_canvas():

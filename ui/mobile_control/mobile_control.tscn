@@ -38,7 +38,7 @@ radius = 12.81
 radius = 12.81
 
 [node name="MobileControl" type="CanvasLayer" unique_id=1342344286 node_paths=PackedStringArray("btn_toggle_control", "btn_hamburger", "dpad_container", "action_btn_contaienr")]
-layer = 99
+layer = 0
 script = ExtResource("1_v2ky5")
 img_button_enable = ExtResource("9_5vl16")
 img_button_disabled = ExtResource("3_u0yph")
