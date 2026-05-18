@@ -1,18 +1,31 @@
 [gd_scene format=3 uid="uid://cg755psg3kvws"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_5aw3i"]
+[ext_resource type="Script" uid="uid://c275k5qcttt1u" path="res://ui/debug_menu/switch_control.gd" id="2_do3wd"]
 
-[node name="SwitchControl" type="MarginContainer" unique_id=1469051680]
+[node name="SwitchControl" type="MarginContainer" unique_id=1469051680 node_paths=PackedStringArray("toggle", "lb_id")]
+offset_right = 238.0
+offset_bottom = 28.0
+script = ExtResource("2_do3wd")
+toggle = NodePath("VBoxContainer/HBoxContainer/CheckButton")
+lb_id = NodePath("VBoxContainer/HBoxContainer/Label")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=333726206]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=96907509]
 layout_mode = 2
+theme_override_constants/separation = 0
 
-[node name="Label" type="Label" parent="HBoxContainer" unique_id=1771286510]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=333726206]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1771286510]
 layout_mode = 2
 text = "anjay"
-label_settings = SubResource("LabelSettings_5aw3i")
 
-[node name="CheckButton" type="CheckButton" parent="HBoxContainer" unique_id=629520001]
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer/HBoxContainer" unique_id=629520001]
 layout_mode = 2
 size_flags_horizontal = 10
 mouse_filter = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=877989646]
+layout_mode = 2
+size_flags_vertical = 8

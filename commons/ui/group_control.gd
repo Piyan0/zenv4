@@ -18,7 +18,6 @@ func group():
     while true:  
         page += 1
         var item_to_add = []
-        var is_no_item_left = false
         for i in range(0, max_per_group):
             var item = temp_items.pop_front()
             if item != null:
@@ -27,7 +26,7 @@ func group():
         var ct = container.call()
         ct.name = str(page)
         for item in item_to_add:
-            item.reparent(ct)
+            ct.reparent(item)
         parent.add_child(ct)
         
         if temp_items.is_empty():

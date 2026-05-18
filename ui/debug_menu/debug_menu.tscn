@@ -1,15 +1,13 @@
 [gd_scene format=3 uid="uid://bnl1kp524o2r3"]
 
-[ext_resource type="Theme" uid="uid://b3klx57slj0l3" path="res://assets/styles/soft_retro/soft_retro.tres" id="1_oh284"]
+[ext_resource type="Theme" uid="uid://b3kq74llqlv3x" path="res://assets/styles/MinimalUI4/MinimalUI.tres" id="1_oh284"]
 [ext_resource type="PackedScene" uid="uid://hc2kc8wcwgk1" path="res://ui/debug_menu/switch_control_container.tscn" id="2_oh284"]
-[ext_resource type="PackedScene" uid="uid://dbu7huheu0kk6" path="res://ui/debug_menu/variabel_control.tscn" id="3_6bvlt"]
+[ext_resource type="PackedScene" uid="uid://dxu2qm4jcwio0" path="res://ui/debug_menu/variable_control_container.tscn" id="3_oh284"]
 
 [node name="DebugMenu" type="Control" unique_id=1430783815]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 9
 anchor_bottom = 1.0
-grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_oh284")
 
@@ -17,7 +15,7 @@ theme = ExtResource("1_oh284")
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_right = 294.0
+offset_right = 527.0
 grow_vertical = 2
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 24
@@ -26,9 +24,10 @@ theme_override_constants/margin_bottom = 24
 
 [node name="TabContainer" type="TabContainer" parent="MarginContainer" unique_id=1708314537]
 layout_mode = 2
-current_tab = 0
+current_tab = 1
 
 [node name="Switch" type="MarginContainer" parent="MarginContainer/TabContainer" unique_id=2122844074]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -42,19 +41,12 @@ metadata/_tab_index = 0
 layout_mode = 2
 
 [node name="Variabel" type="MarginContainer" parent="MarginContainer/TabContainer" unique_id=1949646370]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TabContainer/Variabel" unique_id=884149955]
 layout_mode = 2
 theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
+metadata/_tab_index = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/TabContainer/Variabel/MarginContainer" unique_id=1304279911]
-layout_mode = 2
-
-[node name="variabel_control" parent="MarginContainer/TabContainer/Variabel/MarginContainer/VBoxContainer" unique_id=1282413213 instance=ExtResource("3_6bvlt")]
+[node name="Variable" parent="MarginContainer/TabContainer/Variabel" unique_id=2067169551 instance=ExtResource("3_oh284")]
 layout_mode = 2
