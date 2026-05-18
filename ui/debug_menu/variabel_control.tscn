@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dbu7huheu0kk6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_45gus"]
-font_size = 18
 
 [node name="variabel_control" type="MarginContainer" unique_id=1282413213]
 

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bnl1kp524o2r3"]
 
-[ext_resource type="Theme" uid="uid://b3klx57slj0l3" path="res://assets/styles/soft_retro/soft_retro.tres" id="1_2lwgs"]
-[ext_resource type="PackedScene" uid="uid://cg755psg3kvws" path="res://ui/debug_menu/switch_control.tscn" id="2_oh284"]
+[ext_resource type="Theme" uid="uid://b3klx57slj0l3" path="res://assets/styles/soft_retro/soft_retro.tres" id="1_oh284"]
+[ext_resource type="PackedScene" uid="uid://hc2kc8wcwgk1" path="res://ui/debug_menu/switch_control_container.tscn" id="2_oh284"]
 [ext_resource type="PackedScene" uid="uid://dbu7huheu0kk6" path="res://ui/debug_menu/variabel_control.tscn" id="3_6bvlt"]
 
 [node name="DebugMenu" type="Control" unique_id=1430783815]
@@ -11,13 +11,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_2lwgs")
+theme = ExtResource("1_oh284")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=10304135]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_right = 639.0
+offset_right = 294.0
 grow_vertical = 2
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 24
@@ -38,11 +38,7 @@ theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 metadata/_tab_index = 0
 
-[node name="VBox" type="VBoxContainer" parent="MarginContainer/TabContainer/Switch" unique_id=1217197850]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="SwitchControl" parent="MarginContainer/TabContainer/Switch/VBox" unique_id=1469051680 instance=ExtResource("2_oh284")]
+[node name="SwitchControlContainer" parent="MarginContainer/TabContainer/Switch" unique_id=177317883 instance=ExtResource("2_oh284")]
 layout_mode = 2
 
 [node name="Variabel" type="MarginContainer" parent="MarginContainer/TabContainer" unique_id=1949646370]

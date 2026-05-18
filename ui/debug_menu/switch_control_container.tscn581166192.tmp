@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://hc2kc8wcwgk1"]
+
+[ext_resource type="PackedScene" uid="uid://cg755psg3kvws" path="res://ui/debug_menu/switch_control.tscn" id="1_cnxkj"]
+[ext_resource type="Theme" uid="uid://b3klx57slj0l3" path="res://assets/styles/soft_retro/soft_retro.tres" id="1_xtmb6"]
+[ext_resource type="Script" uid="uid://c7tkwhcv4dgve" path="res://ui/debug_menu/switch_control_container.gd" id="2_fsw8w"]
+[ext_resource type="PackedScene" uid="uid://p3dwtbrt41es" path="res://ui/arrow_navigate/arrow_navigate.tscn" id="4_fsw8w"]
+
+[node name="SwitchControlContainer" type="VBoxContainer" unique_id=177317883]
+offset_right = 184.0
+offset_bottom = 139.0
+size_flags_horizontal = 3
+theme = ExtResource("1_xtmb6")
+script = ExtResource("2_fsw8w")
+
+[node name="SwitchControl" parent="." unique_id=1469051680 instance=ExtResource("1_cnxkj")]
+layout_mode = 2
+
+[node name="SwitchControl2" parent="." unique_id=867266392 instance=ExtResource("1_cnxkj")]
+layout_mode = 2
+
+[node name="SwitchControl3" parent="." unique_id=1194363262 instance=ExtResource("1_cnxkj")]
+layout_mode = 2
+
+[node name="ArrowNavigate" parent="." unique_id=494496901 instance=ExtResource("4_fsw8w")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10

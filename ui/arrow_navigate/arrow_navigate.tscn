@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://p3dwtbrt41es"]
+
+[ext_resource type="Theme" uid="uid://b3klx57slj0l3" path="res://assets/styles/soft_retro/soft_retro.tres" id="1_jfqdi"]
+[ext_resource type="Script" uid="uid://bgrcjtppyrhdm" path="res://ui/arrow_navigate/arrow_navigate.gd" id="2_4n7ue"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4n7ue"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bd3l5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5h2qi"]
+
+[node name="ArrowNavigate" type="MarginContainer" unique_id=925588151 node_paths=PackedStringArray("btn_left", "btn_right", "lb_limit", "ln_current_page")]
+offset_right = 136.0
+offset_bottom = 25.0
+theme = ExtResource("1_jfqdi")
+script = ExtResource("2_4n7ue")
+btn_left = NodePath("HBoxContainer/Button")
+btn_right = NodePath("HBoxContainer/Button2")
+lb_limit = NodePath("HBoxContainer/Label")
+ln_current_page = NodePath("HBoxContainer/LineEdit")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=982500298]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 0
+
+[node name="Button" type="Button" parent="HBoxContainer" unique_id=197400256]
+layout_mode = 2
+text = "<"
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer" unique_id=1427471049]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4n7ue")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_bd3l5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5h2qi")
+text = "20"
+alignment = 2
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=736423546]
+modulate = Color(0.67481464, 0.67481464, 0.6748146, 1)
+layout_mode = 2
+text = "/20"
+
+[node name="Control" type="Control" parent="HBoxContainer" unique_id=1958594008]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="HBoxContainer" unique_id=1222216176]
+layout_mode = 2
+text = ">"

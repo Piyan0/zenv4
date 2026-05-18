@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cg755psg3kvws"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_45gus"]
-font_size = 18
+[sub_resource type="LabelSettings" id="LabelSettings_5aw3i"]
 
 [node name="SwitchControl" type="MarginContainer" unique_id=1469051680]
 
@@ -11,7 +10,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="HBoxContainer" unique_id=1771286510]
 layout_mode = 2
 text = "anjay"
-label_settings = SubResource("LabelSettings_45gus")
+label_settings = SubResource("LabelSettings_5aw3i")
 
 [node name="CheckButton" type="CheckButton" parent="HBoxContainer" unique_id=629520001]
 layout_mode = 2

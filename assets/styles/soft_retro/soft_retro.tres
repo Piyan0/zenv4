@@ -2,7 +2,6 @@
 
 [ext_resource type="FontFile" uid="uid://i1eetfry6s4h" path="res://assets/styles/soft_retro/Righteous/Righteous-Regular.ttf" id="1_lopid"]
 [ext_resource type="Texture2D" uid="uid://udawlj7nryla" path="res://assets/styles/soft_retro/art/checked.svg" id="2_k0c1y"]
-[ext_resource type="Texture2D" uid="uid://dl5qlemud0d4j" path="res://assets/styles/soft_retro/art/toggle_on.svg" id="2_myavk"]
 [ext_resource type="Texture2D" uid="uid://gameaex7fm1g" path="res://assets/styles/soft_retro/art/toggle_off.svg" id="3_208pi"]
 [ext_resource type="Texture2D" uid="uid://cbwip815aqfhq" path="res://assets/styles/soft_retro/art/unchecked.svg" id="3_cwkfx"]
 [ext_resource type="Texture2D" uid="uid://bbl50qp6b1eq8" path="res://assets/styles/soft_retro/art/slider_grabber.svg" id="6_cwkfx"]
@@ -64,6 +63,9 @@ expand_margin_right = 5.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_adq26"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wjpxi"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q3xct"]
+load_path = "res://.godot/imported/toggle_on.svg-cd250aad40746e40020c7df9b72774ea.ctex"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k0c1y"]
 
@@ -274,7 +276,7 @@ CheckButton/colors/font_hover_color = Color(1, 0.933333, 0.8, 1)
 CheckButton/colors/font_hover_pressed_color = Color(1, 0.933333, 0.8, 1)
 CheckButton/colors/font_pressed_color = Color(1, 0.933333, 0.8, 1)
 CheckButton/fonts/font = ExtResource("1_lopid")
-CheckButton/icons/checked = ExtResource("2_myavk")
+CheckButton/icons/checked = SubResource("CompressedTexture2D_q3xct")
 CheckButton/icons/unchecked = ExtResource("3_208pi")
 CheckButton/styles/focus = SubResource("StyleBoxEmpty_k0c1y")
 CheckButton/styles/hover = SubResource("StyleBoxEmpty_cwkfx")
