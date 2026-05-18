@@ -1,6 +1,6 @@
 extends MarginContainer
 
-signal variable_changed(value)
+signal value_changed(value)
 
 @export var lb_id: Label
 @export var ln_value: SpinBox
@@ -22,5 +22,5 @@ var id:
         
         
 func _ready():
-    ln_value.value_changed.connect(variable_changed.emit)
+    ln_value.value_changed.connect(value_changed.emit)
     

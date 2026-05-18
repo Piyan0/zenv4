@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 
 signal dialogue_finished()
 
@@ -43,10 +43,6 @@ func _ready() -> void:
         dialogue_finished.emit()
         queue_free()    
     )
-   
-    #set_dialogue_batch([
-        #DialogueBase.DialogueNormal.new("piyan", _test_msg)
-    #])
 
 
 func _input(event: InputEvent):

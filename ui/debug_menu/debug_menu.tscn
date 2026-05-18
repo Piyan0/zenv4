@@ -1,33 +1,82 @@
 [gd_scene format=3 uid="uid://bnl1kp524o2r3"]
 
 [ext_resource type="Theme" uid="uid://b3kq74llqlv3x" path="res://assets/styles/MinimalUI4/MinimalUI.tres" id="1_oh284"]
+[ext_resource type="Script" uid="uid://bccu2mn77htwi" path="res://ui/debug_menu/debug_menu.gd" id="2_norta"]
 [ext_resource type="PackedScene" uid="uid://hc2kc8wcwgk1" path="res://ui/debug_menu/switch_control_container.tscn" id="2_oh284"]
+[ext_resource type="PackedScene" uid="uid://dyk86kgdrft2x" path="res://entities/player/player.tscn" id="3_mcv13"]
 [ext_resource type="PackedScene" uid="uid://dxu2qm4jcwio0" path="res://ui/debug_menu/variable_control_container.tscn" id="3_oh284"]
-[ext_resource type="PackedScene" uid="uid://ciedlcekixm63" path="res://ui/debug_menu/tag_control_container.tscn" id="4_6bvlt"]
+[ext_resource type="PackedScene" uid="uid://1iqybi6hs537" path="res://ui/debug_menu/tag_control_container.tscn" id="4_6bvlt"]
+[ext_resource type="PackedScene" uid="uid://c7we1jnxdpeub" path="res://levels/demo/piyan_room/01/piyan_room_01.tscn" id="4_iqtl5"]
+[ext_resource type="Texture2D" uid="uid://bq72o2h3kgijo" path="res://ui/debug_menu/arrow.png" id="6_3nqjv"]
 
-[node name="DebugMenu" type="Control" unique_id=1430783815]
+[node name="DebugMenu" type="Control" unique_id=1430783815 node_paths=PackedStringArray("btn_toggle_visible", "controls_container", "variable_container", "switch_container", "tag_container")]
 layout_mode = 3
-anchors_preset = 9
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_oh284")
+script = ExtResource("2_norta")
+btn_toggle_visible = NodePath("MarginContainer/HBoxContainer/Button")
+controls_container = NodePath("MarginContainer/HBoxContainer/TabContainer")
+variable_container = NodePath("MarginContainer/HBoxContainer/TabContainer/Variabel/VariableControlContainer")
+switch_container = NodePath("MarginContainer/HBoxContainer/TabContainer/Switch/SwitchControlContainer")
+tag_container = NodePath("MarginContainer/HBoxContainer/TabContainer/Tag/TagControlContainer")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=704891733]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 4
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=522081502]
+handle_input_locally = false
+snap_2d_transforms_to_pixel = true
+canvas_item_default_texture_filter = 0
+size = Vector2i(320, 180)
+render_target_update_mode = 4
+
+[node name="Player" parent="SubViewportContainer/SubViewport" unique_id=503484590 instance=ExtResource("3_mcv13")]
+
+[node name="Main" parent="SubViewportContainer/SubViewport" unique_id=1060824142 instance=ExtResource("4_iqtl5")]
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=10304135]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_right = 527.0
+offset_right = 457.0
 grow_vertical = 2
-theme_override_constants/margin_left = 24
-theme_override_constants/margin_top = 24
-theme_override_constants/margin_right = 24
-theme_override_constants/margin_bottom = 24
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
 
-[node name="TabContainer" type="TabContainer" parent="MarginContainer" unique_id=1708314537]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1394890484]
 layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer" unique_id=764792212]
+layout_mode = 2
+size_flags_vertical = 0
+icon = ExtResource("6_3nqjv")
+flat = true
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer/HBoxContainer" unique_id=1708314537]
+layout_mode = 2
+size_flags_horizontal = 3
 current_tab = 1
 
-[node name="Switch" type="MarginContainer" parent="MarginContainer/TabContainer" unique_id=2122844074]
+[node name="Switch" type="MarginContainer" parent="MarginContainer/HBoxContainer/TabContainer" unique_id=2122844074]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
@@ -38,10 +87,10 @@ theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 metadata/_tab_index = 0
 
-[node name="SwitchControlContainer" parent="MarginContainer/TabContainer/Switch" unique_id=177317883 instance=ExtResource("2_oh284")]
+[node name="SwitchControlContainer" parent="MarginContainer/HBoxContainer/TabContainer/Switch" unique_id=177317883 instance=ExtResource("2_oh284")]
 layout_mode = 2
 
-[node name="Variabel" type="MarginContainer" parent="MarginContainer/TabContainer" unique_id=1949646370]
+[node name="Variabel" type="MarginContainer" parent="MarginContainer/HBoxContainer/TabContainer" unique_id=1949646370]
 layout_mode = 2
 theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 12
@@ -49,10 +98,10 @@ theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 metadata/_tab_index = 1
 
-[node name="Variable" parent="MarginContainer/TabContainer/Variabel" unique_id=2067169551 instance=ExtResource("3_oh284")]
+[node name="VariableControlContainer" parent="MarginContainer/HBoxContainer/TabContainer/Variabel" unique_id=2067169551 instance=ExtResource("3_oh284")]
 layout_mode = 2
 
-[node name="Tag" type="MarginContainer" parent="MarginContainer/TabContainer" unique_id=1782869074]
+[node name="Tag" type="MarginContainer" parent="MarginContainer/HBoxContainer/TabContainer" unique_id=1782869074]
 visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 12
@@ -61,5 +110,5 @@ theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 metadata/_tab_index = 2
 
-[node name="TagControlContainer" parent="MarginContainer/TabContainer/Tag" unique_id=1620249394 instance=ExtResource("4_6bvlt")]
+[node name="TagControlContainer" parent="MarginContainer/HBoxContainer/TabContainer/Tag" unique_id=1620249394 instance=ExtResource("4_6bvlt")]
 layout_mode = 2

@@ -1,6 +1,6 @@
 extends Control
 
-signal switch_toggled(value)
+signal value_changed(value)
 
 @export var toggle: CheckButton
 @export var lb_id: Label
@@ -21,6 +21,4 @@ var id: String:
         
     
 func _ready():
-    toggle.toggled.connect(func(is_toggled):
-        switch_toggled.emit(is_toggled)
-    )
+    toggle.toggled.connect(value_changed.emit)

@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://c7tkwhcv4dgve" path="res://ui/debug_menu/switch_control_container.gd" id="2_fsw8w"]
 
-[node name="SwitchControlContainer" type="MarginContainer" unique_id=1443643748 node_paths=PackedStringArray("ph_switch_control")]
+[node name="SwitchControlContainer" type="MarginContainer" unique_id=1443643748 node_paths=PackedStringArray("ph_switch_switch_control")]
 custom_minimum_size = Vector2(20, 20)
 offset_right = 238.0
 offset_bottom = 200.0
 size_flags_horizontal = 3
 script = ExtResource("2_fsw8w")
-ph_switch_control = NodePath("ScrollContainer/VBoxContainer/SwitchControl")
+ph_switch_switch_control = NodePath("ScrollContainer/VBoxContainer/SwitchControl")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1297584146]
 layout_mode = 2

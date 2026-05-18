@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://dws6emg1mc14n"]
 
 [ext_resource type="Script" uid="uid://b6tm0yxyg6yig" path="res://ui/dialogue/dialogue.gd" id="1_jy5du"]
-[ext_resource type="Texture2D" uid="uid://c1jdvprvedoin" path="res://assets/ui_sheet.png" id="2_135c7"]
+[ext_resource type="Texture2D" uid="uid://bopvytcso05oa" path="res://assets/ui_sheet.png" id="2_135c7"]
 [ext_resource type="Script" uid="uid://qqm40ogn6vp2" path="res://commons/ui/text_shadow.gd" id="2_h4lfh"]
-[ext_resource type="Texture2D" uid="uid://clxd1wui4k52g" path="res://assets/chloe/avatar_fred.png" id="3_mfx2q"]
-[ext_resource type="LabelSettings" uid="uid://bcaegaq2amce6" path="res://assets/styles/default2.tres" id="3_vqqoj"]
+[ext_resource type="LabelSettings" uid="uid://3wboop2jrvep" path="res://assets/styles/default.tres" id="3_135c7"]
 [ext_resource type="Script" uid="uid://cimwh7dvhh4av" path="res://commons/ui/animate_offset_loop.gd" id="4_r2qx3"]
 [ext_resource type="Texture2D" uid="uid://ct2a4pty6207s" path="res://assets/icons/icon_down.png" id="4_vqqoj"]
 
@@ -12,7 +11,14 @@
 atlas = ExtResource("2_135c7")
 region = Rect2(0, 0, 16, 16)
 
-[node name="Dialogue" type="CanvasLayer" unique_id=1526175197 node_paths=PackedStringArray("container", "lb_name", "lb_msg", "next_indicator", "tr_portrait")]
+[node name="Dialogue" type="Control" unique_id=1549378429 node_paths=PackedStringArray("container", "lb_name", "lb_msg", "next_indicator", "tr_portrait")]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_jy5du")
 container = NodePath("MarginContainer")
 lb_name = NodePath("MarginContainer/MarginContainer/MarginContainer/HBoxContainer/VBoxContainer/Name")
@@ -21,9 +27,11 @@ next_indicator = NodePath("MarginContainer/MarginContainer/Control/NextIndicator
 tr_portrait = NodePath("MarginContainer/MarginContainer/MarginContainer/HBoxContainer/TextureRect")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1974076574]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 63.0
+offset_bottom = 60.0
 grow_horizontal = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer" unique_id=335028620]
@@ -56,7 +64,6 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/MarginContainer/MarginContainer/HBoxContainer" unique_id=1045268936]
 layout_mode = 2
-texture = ExtResource("3_mfx2q")
 stretch_mode = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer/MarginContainer/HBoxContainer" unique_id=570825686]
@@ -68,7 +75,7 @@ modulate = Color(0.2629, 0.615775, 0.791857, 1)
 layout_mode = 2
 size_flags_vertical = 0
 text = "<speaker>"
-label_settings = ExtResource("3_vqqoj")
+label_settings = ExtResource("3_135c7")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=144874118]
 layout_mode = 2
@@ -83,7 +90,7 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "<line>
 <line>"
-label_settings = ExtResource("3_vqqoj")
+label_settings = ExtResource("3_135c7")
 autowrap_mode = 2
 justification_flags = 227
 visible_characters_behavior = 1
