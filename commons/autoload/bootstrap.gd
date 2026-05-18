@@ -75,6 +75,7 @@ func _boot_progression():
 
 var _valid_player: Player
 func _create_dev_console():
+    return
     var commands = [
         DevCommand.new(),
         GameConsoleCommand.new(),

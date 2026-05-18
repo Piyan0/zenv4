@@ -10,11 +10,11 @@ config_version=5
 
 [application]
 
-run/main_scene="uid://c7we1jnxdpeub"
+run/main_scene="uid://bnl1kp524o2r3"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
-boot_splash/show_image=false
 config/icon="uid://ctvoca068pgkm"
+boot_splash/show_image=false
 run/main_scene.editor="uid://ekl6egoo7ssq"
 
 [autoload]
@@ -32,8 +32,8 @@ gdscript/warnings/integer_division=0
 
 [display]
 
-window/size/viewport_width=320
-window/size/viewport_height=180
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/size/window_width_override=600
 window/size/window_height_override=600
 window/stretch/mode="viewport"
@@ -109,7 +109,6 @@ pointing/emulate_touch_from_mouse=true
 
 [rendering]
 
-textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_s3tc_bptc=true
