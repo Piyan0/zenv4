@@ -1,7 +1,15 @@
 [gd_scene format=3 uid="uid://ekl6egoo7ssq"]
 
 [ext_resource type="Script" uid="uid://rnfj2bg14875" path="res://levels/scene_map/scene_map.gd" id="1_jdh4r"]
+[ext_resource type="PackedScene" uid="uid://blfb11rtowojy" path="res://ui/game_viewport.tscn" id="2_676qx"]
 
-[node name="SceneMap" type="Node" unique_id=1781906236]
+[node name="SceneMap" type="Node" unique_id=1781906236 node_paths=PackedStringArray("vp")]
 script = ExtResource("1_jdh4r")
-direction = 1
+vp = NodePath("GameViewport/SubViewport")
+
+[node name="GameViewport" parent="." unique_id=2064751685 instance=ExtResource("2_676qx")]
+
+[node name="SubViewport" parent="GameViewport" index="0" unique_id=1643104881]
+handle_input_locally = false
+
+[editable path="GameViewport"]

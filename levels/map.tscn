@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dj7em0khpnyf7"]
+
+[ext_resource type="PackedScene" uid="uid://blfb11rtowojy" path="res://ui/game_viewport.tscn" id="1_wyxhb"]
+
+[sub_resource type="GDScript" id="GDScript_wyxhb"]
+script/source = "extends Map
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wyxhb"]
+size = Vector2(16, 16)
+
+[node name="GameViewport" unique_id=2064751685 instance=ExtResource("1_wyxhb")]
+script = SubResource("GDScript_wyxhb")
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewport" parent_id_path=PackedInt32Array(1643104881) index="0" unique_id=153423885]
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="SubViewport" parent_id_path=PackedInt32Array(1643104881) index="1" unique_id=578115242]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewport/StaticBody2D" index="0" unique_id=1215986881]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_wyxhb")

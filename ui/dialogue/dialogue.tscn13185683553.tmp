@@ -19,6 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jy5du")
+max_char_one_line = null
 container = NodePath("MarginContainer")
 lb_name = NodePath("MarginContainer/MarginContainer/MarginContainer/HBoxContainer/VBoxContainer/Name")
 lb_msg = NodePath("MarginContainer/MarginContainer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/Content")
@@ -26,10 +27,11 @@ next_indicator = NodePath("MarginContainer/MarginContainer/Control/NextIndicator
 tr_portrait = NodePath("MarginContainer/MarginContainer/MarginContainer/HBoxContainer/TextureRect")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1974076574]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 54.0
+offset_bottom = 60.0
 grow_horizontal = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer" unique_id=335028620]
@@ -52,7 +54,7 @@ color = Color(0, 0, 0, 0.643137)
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer" unique_id=1336281685]
 layout_mode = 2
-theme_override_constants/margin_left = 12
+theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
@@ -73,7 +75,6 @@ theme_override_constants/separation = 0
 modulate = Color(0.2629, 0.615775, 0.791857, 1)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 20
 text = "<speaker>"
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=144874118]
@@ -84,10 +85,11 @@ theme_override_constants/margin_right = 12
 
 [node name="Content" type="Label" parent="MarginContainer/MarginContainer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer" unique_id=1382140940]
 modulate = Color(0.894922, 0.894922, 0.894922, 1)
+custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 20
-text = "<line>"
+text = "<line>
+<line>"
 autowrap_mode = 2
 justification_flags = 227
 visible_characters_behavior = 1

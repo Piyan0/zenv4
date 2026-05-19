@@ -37,6 +37,20 @@ radius = 12.81
 [sub_resource type="CircleShape2D" id="CircleShape2D_cw07a"]
 radius = 12.81
 
+[sub_resource type="GDScript" id="GDScript_u0yph"]
+script/source = "extends Button
+
+func _pressed() -> void:
+    # 1. Buat tiruan object InputEvent untuk aksi \"ui_up\"
+    var ev = InputEventAction.new()
+    ev.action = \"ui_up\"
+    ev.pressed = true
+    
+    # 2. Kirim/Tembuskan event ini langsung ke Viewport Utama proyek
+    # Ini akan membuat sistem mendeteksi tombol seolah ditekan dari keyboard/HP asli
+    Input.parse_input_event(ev)
+"
+
 [node name="MobileControl" type="CanvasLayer" unique_id=1342344286 node_paths=PackedStringArray("btn_toggle_control", "btn_hamburger", "dpad_container", "action_btn_contaienr")]
 layer = 0
 script = ExtResource("1_v2ky5")
@@ -220,3 +234,9 @@ position = Vector2(25, 73)
 texture_normal = ExtResource("9_5vl16")
 passby_press = true
 script = ExtResource("4_5vl16")
+
+[node name="Button" type="Button" parent="." unique_id=1716564767]
+offset_right = 88.0
+offset_bottom = 31.0
+text = "button_up"
+script = SubResource("GDScript_u0yph")

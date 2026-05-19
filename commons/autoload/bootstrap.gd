@@ -57,6 +57,20 @@ func _create_save_system():
 
 func _boot_map_manager():
     var scene_man= MapManager.new(self, "res://entities/player/player.tscn")
+    scene_man.map_ready.connect(func():
+        var events = get_tree().get_nodes_in_group("events")
+        for i in events:
+            progression.add_internal_switch(i.get_internal_switch_id())
+        
+        var progression_data= progression.get_data()
+        event_manager.refresh_map(
+            progression_data[Progression.KEY_INTERNAL_SWITCHES],
+            progression_data[Progression.KEY_VARIABLES],
+            progression_data[Progression.KEY_GLOBAL_SWITCHES],
+            progression_data[Progression.KEY_TAG],
+        )
+    )
+    
     return scene_man
 
 
@@ -108,9 +122,8 @@ func _create_event_manager():
     
     
 func _create_mobile_control():
-    return
-    if OS.get_name() == "Windows" && OS.is_debug_build():
-        return
+    # if OS.get_name() == "Windows" && OS.is_debug_build():
+    #     return
         
     var mobile_control = MobileControl.spawn()
     if mobile_control != null:
@@ -118,25 +131,13 @@ func _create_mobile_control():
 
 
 func _add_canvas():
-    var sub_v = SubViewport.new()
-    sub_v.transparent_bg = true
-    sub_v.snap_2d_transforms_to_pixel = true
-    sub_v.canvas_item_default_texture_filter = Viewport.DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_NEAREST
-    var subviewport_container = SubViewportContainer.new()
-    subviewport_container.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
-    subviewport_container.set_anchors_and_offsets_preset(Control.LayoutPreset.PRESET_FULL_RECT)
-    subviewport_container.mouse_filter = Control.MOUSE_FILTER_IGNORE
-    subviewport_container.stretch = true
-    subviewport_container.stretch_shrink = 4
-    subviewport_container.add_child(sub_v)
-    var cv= CanvasLayer.new()
     # other canvas layer should below this, as global_canvas is considered as high priority draw order.
+    var cv= CanvasLayer.new()
     cv.layer= 10
     cv.name= "GlobalCanvas"
-    cv.add_child(subviewport_container)
     add_child(cv)
     
-    return sub_v
+    return cv
 
 
 func _add_world_canvas():

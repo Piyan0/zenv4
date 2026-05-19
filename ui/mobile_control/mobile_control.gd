@@ -1,4 +1,3 @@
-class_name MobileControl
 extends CanvasLayer
 signal on_hamburger_clicked()
 
@@ -44,7 +43,3 @@ func _ready():
             action_btn_contaienr.hide()
     )
 
-
-static func spawn():
-    var instance = load("uid://bxxlmvxb1njx0").instantiate()
-    return instance

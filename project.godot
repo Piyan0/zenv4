@@ -10,11 +10,11 @@ config_version=5
 
 [application]
 
-run/main_scene="uid://bnl1kp524o2r3"
+run/main_scene="uid://ekl6egoo7ssq"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
-config/icon="uid://ctvoca068pgkm"
 boot_splash/show_image=false
+config/icon="uid://ctvoca068pgkm"
 
 [autoload]
 
