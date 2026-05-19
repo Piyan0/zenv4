@@ -8,10 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://c2va02chg5425" path="res://ui/mobile_control/dpad_left.png" id="4_kro4v"]
 [ext_resource type="Texture2D" uid="uid://cfciqx8jax7ak" path="res://ui/mobile_control/dpad_shadow.png" id="4_u0yph"]
 [ext_resource type="Texture2D" uid="uid://xyc7svsl53vh" path="res://ui/mobile_control/dpad_right.png" id="5_ow6bc"]
-[ext_resource type="Texture2D" uid="uid://bon4d1vjq0s81" path="res://ui/mobile_control/button_a.png" id="6_kro4v"]
-[ext_resource type="Texture2D" uid="uid://br8o8idnvddjt" path="res://ui/mobile_control/button_b.png" id="7_5bki4"]
 [ext_resource type="Texture2D" uid="uid://mdkave6mp1g" path="res://ui/mobile_control/hamburger.png" id="8_v2ky5"]
 [ext_resource type="Texture2D" uid="uid://ipijsk13lg7s" path="res://ui/mobile_control/button_enable_control.png" id="9_5vl16"]
+[ext_resource type="Texture2D" uid="uid://b6y0ypp1uigdo" path="res://ui/mobile_control/button_a_new.png" id="10_u0yph"]
+[ext_resource type="Texture2D" uid="uid://otvnu7acj28l" path="res://ui/mobile_control/button_b_new.png" id="11_cw07a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yjq75"]
 region = Rect2(242, 418, 12, 12)
@@ -30,26 +30,6 @@ region = Rect2(290, 418, 12, 12)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eerth"]
 region = Rect2(290, 434, 12, 12)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_u0yph"]
-radius = 12.81
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_cw07a"]
-radius = 12.81
-
-[sub_resource type="GDScript" id="GDScript_u0yph"]
-script/source = "extends Button
-
-func _pressed() -> void:
-    # 1. Buat tiruan object InputEvent untuk aksi \"ui_up\"
-    var ev = InputEventAction.new()
-    ev.action = \"ui_up\"
-    ev.pressed = true
-    
-    # 2. Kirim/Tembuskan event ini langsung ke Viewport Utama proyek
-    # Ini akan membuat sistem mendeteksi tombol seolah ditekan dari keyboard/HP asli
-    Input.parse_input_event(ev)
-"
 
 [node name="MobileControl" type="CanvasLayer" unique_id=1342344286 node_paths=PackedStringArray("btn_toggle_control", "btn_hamburger", "dpad_container", "action_btn_contaienr")]
 layer = 0
@@ -155,34 +135,36 @@ grow_vertical = 0
 
 [node name="Dpad" type="Node2D" parent="Control" unique_id=1514329356]
 modulate = Color(1, 1, 1, 0.61300004)
-position = Vector2(37, -43)
+position = Vector2(322, -101)
 
 [node name="Sprite2D" type="Sprite2D" parent="Control/Dpad" unique_id=1057072195]
+visible = false
 position = Vector2(10, 34)
 texture = ExtResource("4_u0yph")
 
 [node name="DpaUp" type="TouchScreenButton" parent="Control/Dpad" unique_id=752916658]
+position = Vector2(-141, -196)
 texture_normal = ExtResource("2_eerth")
 passby_press = true
 action = "ui_up"
 script = ExtResource("4_5vl16")
 
 [node name="DpadDown" type="TouchScreenButton" parent="Control/Dpad" unique_id=724626638]
-position = Vector2(0, 39)
+position = Vector2(-166, -58)
 texture_normal = ExtResource("3_1oa1u")
 passby_press = true
 action = "ui_down"
 script = ExtResource("4_5vl16")
 
 [node name="DpadLeft" type="TouchScreenButton" parent="Control/Dpad" unique_id=302394663]
-position = Vector2(-28, 27)
+position = Vector2(-310, -100)
 texture_normal = ExtResource("4_kro4v")
 passby_press = true
 action = "ui_left"
 script = ExtResource("4_5vl16")
 
 [node name="DpadRight" type="TouchScreenButton" parent="Control/Dpad" unique_id=972846474]
-position = Vector2(13, 27)
+position = Vector2(-38, -90)
 texture_normal = ExtResource("5_ow6bc")
 passby_press = true
 action = "ui_right"
@@ -203,17 +185,15 @@ modulate = Color(1, 1, 1, 0.61300004)
 position = Vector2(-30, -37)
 
 [node name="ButtonA" type="TouchScreenButton" parent="Control2/Action" unique_id=822921140]
-position = Vector2(-29, -52)
-texture_normal = ExtResource("6_kro4v")
-shape = SubResource("CircleShape2D_u0yph")
+position = Vector2(-157, -145)
+texture_normal = ExtResource("10_u0yph")
 passby_press = true
 action = "ui_accept"
 script = ExtResource("4_5vl16")
 
 [node name="ButtonB" type="TouchScreenButton" parent="Control2/Action" unique_id=113824228]
-position = Vector2(-56, -23)
-texture_normal = ExtResource("7_5bki4")
-shape = SubResource("CircleShape2D_cw07a")
+position = Vector2(-293, -255)
+texture_normal = ExtResource("11_cw07a")
 passby_press = true
 action = "ui_cancel"
 script = ExtResource("4_5vl16")
@@ -223,6 +203,7 @@ modulate = Color(1, 1, 1, 0.3)
 position = Vector2(-54, -179)
 
 [node name="Hamburger" type="TouchScreenButton" parent="Control2/Option" unique_id=476093945]
+visible = false
 position = Vector2(33, 64)
 texture_normal = ExtResource("8_v2ky5")
 passby_press = true
@@ -230,13 +211,8 @@ action = "ui_cancel"
 script = ExtResource("4_5vl16")
 
 [node name="EnableButton" type="TouchScreenButton" parent="Control2/Option" unique_id=707910773]
+visible = false
 position = Vector2(25, 73)
 texture_normal = ExtResource("9_5vl16")
 passby_press = true
 script = ExtResource("4_5vl16")
-
-[node name="Button" type="Button" parent="." unique_id=1716564767]
-offset_right = 88.0
-offset_bottom = 31.0
-text = "button_up"
-script = SubResource("GDScript_u0yph")

@@ -231,7 +231,7 @@ func _init() -> void:
     
     _actions.text = func(str_arg):
     
-        var arr = Array(str_arg.split(" @ "))
+        var arr = Array(str_arg.split(" > "))
         var speaker = arr.pop_front()
         if !"dialogue" in _state:
             _state.dialogue = [] as Array[DialogueBase.DialogueNormal]

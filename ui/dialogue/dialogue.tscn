@@ -2,13 +2,24 @@
 
 [ext_resource type="Script" uid="uid://b6tm0yxyg6yig" path="res://ui/dialogue/dialogue.gd" id="1_jy5du"]
 [ext_resource type="Texture2D" uid="uid://bopvytcso05oa" path="res://assets/ui_sheet.png" id="2_135c7"]
-[ext_resource type="Script" uid="uid://qqm40ogn6vp2" path="res://commons/ui/text_shadow.gd" id="2_h4lfh"]
 [ext_resource type="Script" uid="uid://cimwh7dvhh4av" path="res://commons/ui/animate_offset_loop.gd" id="4_r2qx3"]
 [ext_resource type="Texture2D" uid="uid://ct2a4pty6207s" path="res://assets/icons/icon_down.png" id="4_vqqoj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vqqoj"]
 atlas = ExtResource("2_135c7")
 region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="LabelSettings" id="LabelSettings_r2qx3"]
+font_size = 30
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.54509807)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jy5du"]
+font_size = 32
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.54509807)
+shadow_offset = Vector2(3, 3)
 
 [node name="Dialogue" type="Control" unique_id=1549378429 node_paths=PackedStringArray("container", "lb_name", "lb_msg", "next_indicator", "tr_portrait")]
 texture_filter = 1
@@ -31,6 +42,7 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 54.0
 grow_horizontal = 2
+theme_override_constants/margin_top = 12
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer" unique_id=335028620]
 layout_mode = 2
@@ -52,10 +64,10 @@ color = Color(0, 0, 0, 0.643137)
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer" unique_id=1336281685]
 layout_mode = 2
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 4
-theme_override_constants/margin_right = 4
-theme_override_constants/margin_bottom = 4
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 12
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer/MarginContainer" unique_id=550143857]
 layout_mode = 2
@@ -67,7 +79,6 @@ stretch_mode = 4
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer/MarginContainer/HBoxContainer" unique_id=570825686]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 0
 
 [node name="Name" type="Label" parent="MarginContainer/MarginContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=675345800]
 modulate = Color(0.2629, 0.615775, 0.791857, 1)
@@ -75,12 +86,12 @@ layout_mode = 2
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 20
 text = "<speaker>"
+label_settings = SubResource("LabelSettings_r2qx3")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=144874118]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_right = 12
+theme_override_constants/margin_left = 48
 
 [node name="Content" type="Label" parent="MarginContainer/MarginContainer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer" unique_id=1382140940]
 modulate = Color(0.894922, 0.894922, 0.894922, 1)
@@ -88,6 +99,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 20
 text = "<line>"
+label_settings = SubResource("LabelSettings_jy5du")
 autowrap_mode = 2
 justification_flags = 227
 visible_characters_behavior = 1
@@ -110,16 +122,6 @@ grow_horizontal = 0
 grow_vertical = 0
 texture = ExtResource("4_vqqoj")
 stretch_mode = 4
-
-[node name="TextShadow" type="Node" parent="." unique_id=2054762418 node_paths=PackedStringArray("target")]
-script = ExtResource("2_h4lfh")
-target = NodePath("../MarginContainer/MarginContainer/MarginContainer/HBoxContainer/VBoxContainer/Name")
-metadata/_custom_type_script = "uid://qqm40ogn6vp2"
-
-[node name="TextShadow2" type="Node" parent="." unique_id=883377904 node_paths=PackedStringArray("target")]
-script = ExtResource("2_h4lfh")
-target = NodePath("../MarginContainer/MarginContainer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/Content")
-metadata/_custom_type_script = "uid://qqm40ogn6vp2"
 
 [node name="AnimateOffsetLoop" type="Node" parent="." unique_id=1568569091 node_paths=PackedStringArray("target")]
 script = ExtResource("4_r2qx3")
