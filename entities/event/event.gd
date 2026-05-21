@@ -4,8 +4,7 @@ extends Node2D
 
 signal interact_finished()
 
-# TODO make position reference to be 1,1, instead 16,16, tile id
-@export var _commands_source : Script
+
 @export var eventpages: Array[EventPage]
 @export var area: Area2D
 @export var spr: Sprite2D
@@ -13,7 +12,6 @@ signal interact_finished()
 @export var animation_process: AnimationProcess
 @export var hint_rect: ReferenceRect
 
-var instances = []
 var is_interact_running= false
 var interact_direction= Vector2.ZERO
 var active_event_page: EventPage
@@ -132,7 +130,9 @@ func interact(player):
     
     interact_direction= direction_from_player
     is_interact_running= true
-    await active_event_page.exec_commands()
+    var command = FileAccess.open(active_event_page.event_command, FileAccess.READ)
+    command = command.get_as_text()
+    await Bootstrap.event_manager.process_commands(commands)
     interact_finished.emit.call_deferred()
     is_interact_running= false
     

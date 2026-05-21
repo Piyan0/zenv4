@@ -25,7 +25,7 @@ enum Placement { BELOW_GROUND=1, GROUND, ABOVE_GROUND }
 @export var trigger: Trigger= Trigger.INTERACT_BUTTON
 @export var placement: Placement= Placement.GROUND
 @export var through = false
-@export var i_switch: InternalSwitch
+@export var internal_switch: InternalSwitch
 # TODO add item conditions.
 @export var variable: String= EMPTY
 @export var variable_value: int= -1
@@ -39,19 +39,8 @@ enum Placement { BELOW_GROUND=1, GROUND, ABOVE_GROUND }
 @export var force_disabled = false
 @export_group("")
 
-# TODO why we have to auto increment this...
-@export var event_commands_id : int = 1
 @export var event_traits: Array[EventTrait]
-@export var static_command_list: Array[StaticEventCommand] = [null, null]
-var event_commands: Callable
-
-
-func exec_commands() -> void:
-    for static_command in static_command_list:
-        if static_command == null: continue
-        await static_command.run_command()
-    
-    await event_commands.call()
+@export_file("*.psl") var event_command: String
 
 
 func is_event_active(
@@ -83,9 +72,9 @@ func is_event_active(
 
 func _internal_switch_pass(switches):
     assert(!switches.is_empty(), str(switches))
-    if i_switch == InternalSwitch.NONE: return true
-    # printt(switches, i_switch)
-    return switches[str(i_switch)] == true
+    if internal_switch == InternalSwitch.NONE: return true
+    # printt(switches, internal_switch)
+    return switches[str(internal_switch)] == true
 
 
 func _variable_pass(variables):

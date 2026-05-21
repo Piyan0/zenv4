@@ -1,13 +1,9 @@
 [gd_scene format=3 uid="uid://dws6emg1mc14n"]
 
 [ext_resource type="Script" uid="uid://b6tm0yxyg6yig" path="res://ui/dialogue/dialogue.gd" id="1_jy5du"]
-[ext_resource type="Texture2D" uid="uid://bopvytcso05oa" path="res://assets/ui_sheet.png" id="2_135c7"]
+[ext_resource type="Texture2D" uid="uid://bb5scyjdhfr24" path="res://assets/box.png" id="2_r2qx3"]
 [ext_resource type="Script" uid="uid://cimwh7dvhh4av" path="res://commons/ui/animate_offset_loop.gd" id="4_r2qx3"]
 [ext_resource type="Texture2D" uid="uid://ct2a4pty6207s" path="res://assets/icons/icon_down.png" id="4_vqqoj"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vqqoj"]
-atlas = ExtResource("2_135c7")
-region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="LabelSettings" id="LabelSettings_r2qx3"]
 font_size = 30
@@ -51,11 +47,11 @@ size_flags_vertical = 8
 
 [node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/MarginContainer" unique_id=1679782524]
 layout_mode = 2
-texture = SubResource("AtlasTexture_vqqoj")
-patch_margin_left = 1
-patch_margin_top = 1
-patch_margin_right = 1
-patch_margin_bottom = 1
+texture = ExtResource("2_r2qx3")
+patch_margin_left = 32
+patch_margin_top = 4
+patch_margin_right = 32
+patch_margin_bottom = 4
 
 [node name="ColorRect" type="ColorRect" parent="MarginContainer/MarginContainer" unique_id=717914915]
 visible = false

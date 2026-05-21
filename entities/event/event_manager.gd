@@ -6,6 +6,7 @@ signal map_refreshed(events)
 static var current_internal_switch_id: String
 static var current_event_id: String
 
+var interpreter : PiyanScriptingLanguage
 var can_process_interact = func(): return true
 
 var _current_input: InputEvent= InputEventAction.new()
@@ -49,6 +50,10 @@ func _process(_delta):
             current_event_id = ""
 
 
+func process_command(text):
+    await interpreter.from_text(text)
+    
+    
 func refresh_map(internal_switches, variables, global_switches, tag_list):
     var events= get_tree().get_nodes_in_group("events")
     for i: Event in events:
