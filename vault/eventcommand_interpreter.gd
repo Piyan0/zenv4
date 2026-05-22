@@ -10,7 +10,12 @@ func _get_variable_list():
 
 func _get_code_list():
     var code = {}
-    code.text = func(args, remaining_commands):
+    code.text = _text
+    
+    return code
+
+
+func _text(args, remaining_commands):
         if !"dialogue_batch" in _state:
             _state["dialogue_batch"]= [] as Array[DialogueBase.DialogueNormal]
             var d_batch = _state["dialogue_batch"]
@@ -29,7 +34,3 @@ func _get_code_list():
             dialogue.set_dialogue_batch(_state["dialogue_batch"])
             await dialogue.dialogue_finished
             _state.erase("dialogue_batch")
-
-        
-    
-    return code
