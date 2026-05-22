@@ -24,13 +24,13 @@ func _text(args, remaining_commands):
             )
 
         var next_command = null
+        
         if !remaining_commands.is_empty():
             next_command = remaining_commands.back()
-
+        #print(remaining_commands)
         if next_command != null || next_command != "text":
-            var dialogue = load("uid://dws6emg1mc14n").instantiate()
-            dialogue.portrait_data = DialoguePortraitData.new().get_data()
-            Bootstrap.canvas.add_child(dialogue)
-            dialogue.set_dialogue_batch(_state["dialogue_batch"])
-            await dialogue.dialogue_finished
+            var dialogue_vp = load("uid://ctal5xoq67h54").instantiate()
+            Bootstrap.canvas.add_child(dialogue_vp)
+            dialogue_vp.dialogue.set_dialogue_batch(_state["dialogue_batch"])
+            await dialogue_vp.dialogue.dialogue_finished
             _state.erase("dialogue_batch")

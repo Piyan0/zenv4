@@ -1,24 +1,14 @@
 [gd_scene format=3 uid="uid://dws6emg1mc14n"]
 
 [ext_resource type="Script" uid="uid://b6tm0yxyg6yig" path="res://ui/dialogue/dialogue.gd" id="1_jy5du"]
-[ext_resource type="Texture2D" uid="uid://bb5scyjdhfr24" path="res://assets/box.png" id="2_r2qx3"]
+[ext_resource type="Texture2D" uid="uid://bwg2ig3cy62xb" path="res://assets/rect_black.png" id="2_jy5du"]
+[ext_resource type="LabelSettings" uid="uid://3wboop2jrvep" path="res://assets/styles/default.tres" id="3_135c7"]
 [ext_resource type="Script" uid="uid://cimwh7dvhh4av" path="res://commons/ui/animate_offset_loop.gd" id="4_r2qx3"]
 [ext_resource type="Texture2D" uid="uid://ct2a4pty6207s" path="res://assets/icons/icon_down.png" id="4_vqqoj"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_r2qx3"]
-font_size = 30
-shadow_size = 3
-shadow_color = Color(0, 0, 0, 0.54509807)
-shadow_offset = Vector2(3, 3)
-
-[sub_resource type="LabelSettings" id="LabelSettings_jy5du"]
-font_size = 32
-shadow_size = 3
-shadow_color = Color(0, 0, 0, 0.54509807)
-shadow_offset = Vector2(3, 3)
-
 [node name="Dialogue" type="Control" unique_id=1549378429 node_paths=PackedStringArray("container", "lb_name", "lb_msg", "next_indicator", "tr_portrait")]
 texture_filter = 1
+custom_minimum_size = Vector2(320, 180)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,12 +23,15 @@ next_indicator = NodePath("MarginContainer/MarginContainer/Control/NextIndicator
 tr_portrait = NodePath("MarginContainer/MarginContainer/MarginContainer/HBoxContainer/TextureRect")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1974076574]
+custom_minimum_size = Vector2(320, 0)
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 54.0
+offset_bottom = 38.0
 grow_horizontal = 2
-theme_override_constants/margin_top = 12
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer" unique_id=335028620]
 layout_mode = 2
@@ -47,23 +40,18 @@ size_flags_vertical = 8
 
 [node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/MarginContainer" unique_id=1679782524]
 layout_mode = 2
-texture = ExtResource("2_r2qx3")
+texture = ExtResource("2_jy5du")
 patch_margin_left = 32
 patch_margin_top = 4
 patch_margin_right = 32
 patch_margin_bottom = 4
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/MarginContainer" unique_id=717914915]
-visible = false
-layout_mode = 2
-color = Color(0, 0, 0, 0.643137)
-
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer" unique_id=1336281685]
 layout_mode = 2
-theme_override_constants/margin_left = 24
-theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 24
-theme_override_constants/margin_bottom = 12
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer/MarginContainer" unique_id=550143857]
 layout_mode = 2
@@ -75,6 +63,7 @@ stretch_mode = 4
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer/MarginContainer/HBoxContainer" unique_id=570825686]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 0
 
 [node name="Name" type="Label" parent="MarginContainer/MarginContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=675345800]
 modulate = Color(0.2629, 0.615775, 0.791857, 1)
@@ -82,12 +71,12 @@ layout_mode = 2
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 20
 text = "<speaker>"
-label_settings = SubResource("LabelSettings_r2qx3")
+label_settings = ExtResource("3_135c7")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=144874118]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/margin_left = 48
+theme_override_constants/margin_left = 12
 
 [node name="Content" type="Label" parent="MarginContainer/MarginContainer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer" unique_id=1382140940]
 modulate = Color(0.894922, 0.894922, 0.894922, 1)
@@ -95,7 +84,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 20
 text = "<line>"
-label_settings = SubResource("LabelSettings_jy5du")
+label_settings = ExtResource("3_135c7")
 autowrap_mode = 2
 justification_flags = 227
 visible_characters_behavior = 1

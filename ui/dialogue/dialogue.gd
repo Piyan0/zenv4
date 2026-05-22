@@ -2,8 +2,6 @@ extends Control
 
 signal dialogue_finished()
 
-@export var max_char_one_line = 39
-@export var bg: Control
 @export var container: Control
 @export var lb_name: Label
 @export var lb_msg: Label
