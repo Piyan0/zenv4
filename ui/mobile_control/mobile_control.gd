@@ -13,12 +13,6 @@ signal on_hamburger_clicked()
 var _is_control_enabled = true
 
 func _ready():
-    var x= ("anjay
-    mabae (
-        a, (anjay mabae )
-    )
-    ")
-    print(x.strip_edges())
     btn_hamburger.pressed.connect(func():
         on_hamburger_clicked.emit()
         var player = Player.instance

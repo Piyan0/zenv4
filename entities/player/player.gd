@@ -20,7 +20,7 @@ var lock_counter = 0:
     set(value):
         # print(value)
         lock_counter = value
-        print("Player:lock_counter ",value)
+        # print("Player:lock_counter ",value)
         if lock_counter > 0:
             grid_mov.lock_input = true
         else:

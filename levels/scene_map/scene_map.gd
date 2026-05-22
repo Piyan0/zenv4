@@ -19,7 +19,3 @@ func _get_map_path():
     var cfg = ConfigFile.new()
     cfg.load(source_path)
     return cfg.get_value("Data", "starting_map")
-
-func _input(e):
-    if e.is_action_pressed("ui_up"):
-        print("anjay")

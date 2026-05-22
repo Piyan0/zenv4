@@ -28,13 +28,6 @@ func _ready():
         hint_rect.hide()
         
     spr.hide()
-    if _commands_source:
-        _commands = _commands_source.new()
-        _commands.event = name
-        _commands.internal_switch = get_internal_switch_id()
-        
-    else:
-        _commands = EventCommands.new()
     add_to_group("events")
 
 
@@ -123,6 +116,7 @@ func is_interact(player: Player, input_event: InputEvent= null):
             
 
 func interact(player):
+    assert(active_event_page != null, "active event page is null.")
     if !can_interact:
         return
     var direction_from_player= player.position - position
@@ -132,7 +126,7 @@ func interact(player):
     is_interact_running= true
     var command = FileAccess.open(active_event_page.event_command, FileAccess.READ)
     command = command.get_as_text()
-    await Bootstrap.event_manager.process_commands(commands)
+    await Bootstrap.event_manager.process_command(command, active_event_page.get_arguments())
     interact_finished.emit.call_deferred()
     is_interact_running= false
     
@@ -165,7 +159,6 @@ func _update_trigger_touch(player):
         
 
 func _active_event_changed(event_page: EventPage):
-    event_page.event_commands = _commands.get_event_commands(event_page.event_commands_id)
     area.collision_layer = 0
     spr.show()
     spr.texture= event_page.graphic

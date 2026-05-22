@@ -50,8 +50,8 @@ func _process(_delta):
             current_event_id = ""
 
 
-func process_command(text):
-    await interpreter.from_text(text)
+func process_command(text, internal_var):
+    await interpreter.from_text(text, internal_var)
     
     
 func refresh_map(internal_switches, variables, global_switches, tag_list):

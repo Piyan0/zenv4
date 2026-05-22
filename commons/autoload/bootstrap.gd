@@ -113,6 +113,7 @@ func _create_dev_console():
 
 func _create_event_manager():
     var evm = EventManager.new(self)
+    evm.interpreter = EventCommandInterpreter.new()
     evm.can_process_interact = func():
         if Player.instance:
             return Player.instance.lock_counter == 0
@@ -122,8 +123,8 @@ func _create_event_manager():
     
     
 func _create_mobile_control():
-    # if OS.get_name() == "Windows" && OS.is_debug_build():
-    #     return
+    if OS.get_name() == "Windows":
+        return
         
     var mobile_control = MobileControl.spawn()
     if mobile_control != null:

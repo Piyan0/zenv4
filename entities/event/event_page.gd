@@ -39,8 +39,21 @@ enum Placement { BELOW_GROUND=1, GROUND, ABOVE_GROUND }
 @export var force_disabled = false
 @export_group("")
 
+@export_group("command")
+## Dipisahkan dengan koma. Contoh: arg1, arg2.
+@export_multiline var arguments: String
 @export var event_traits: Array[EventTrait]
 @export_file("*.psl") var event_command: String
+@export_group("")
+
+
+func get_arguments():
+    var args = {}
+    var split_args = arguments.split(",")
+    for i in range(0, split_args.size()):
+        args[str("_", i)] = split_args[i].strip_edges()
+    
+    return args
 
 
 func is_event_active(
