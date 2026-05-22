@@ -20,7 +20,6 @@ var _can_toggle_console = true
 var _history = []
 var _history_save_path = "res://ui/dev_console/command_history.cfg"
 
-# TODO create some sort of window for progress managament, and load on play from previosu checked.
 
 func _ready():
     _load_history()

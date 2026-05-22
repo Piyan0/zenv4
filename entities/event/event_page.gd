@@ -26,7 +26,6 @@ enum Placement { BELOW_GROUND=1, GROUND, ABOVE_GROUND }
 @export var placement: Placement= Placement.GROUND
 @export var through = false
 @export var internal_switch: InternalSwitch
-# TODO add item conditions.
 @export var variable: String= EMPTY
 @export var variable_value: int= -1
 @export var global_switch_001: String= EMPTY

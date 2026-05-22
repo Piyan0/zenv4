@@ -13,7 +13,6 @@ var _variables= {}
 var _global_switches= {}
 var _internal_switches= {}
 var _tag_list= ["tag", "tag2"]
-# TODO add internal switch here.
 
 func _init(p_var_source, p_switch_source):
     variable_source= p_var_source

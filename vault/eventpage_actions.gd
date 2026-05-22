@@ -19,7 +19,6 @@ func _init() -> void:
         Bootstrap.canvas.add_child(narator_view)
         await narator_view.finished
     
-    # TODO simplify dialogue invoke.
     _actions["push_dialogue"] = _queue_dialogue_batch
 
     _actions["push_dialogue2"] = _queue_dialogue_batch2
@@ -90,7 +89,7 @@ func _init() -> void:
     _actions["has_item"] = func(item_id):
         pass
     
-    #TODO this change the current scene, so all control flow such as set_switch and set_var, set_internal_switch will be error. Call this at the end of the commands. 
+    #NOTE this change the current scene, so all control flow such as set_switch and set_var, set_internal_switch will be error. Call this at the end of the commands. 
     _actions["goto"] = func(map_id, x = 0, y = 0, dir_str = "down", start_from_black = false):
         var dir
         match dir_str:
