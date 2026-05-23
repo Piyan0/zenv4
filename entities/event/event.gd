@@ -132,7 +132,6 @@ func interact(player):
     
 
 func update_active_event(internal_switches, variables, global_switches, tag_list):
-
     var reversed_event_pages= eventpages.duplicate()
     reversed_event_pages.reverse()
     for i in reversed_event_pages:
@@ -177,7 +176,6 @@ func _active_event_changed(event_page: EventPage):
     if event_page.through:
             area.collision_layer = 0
         
-
 
 func _is_interact_ground(player, input_event):
     match active_event_page.trigger:
