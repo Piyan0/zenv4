@@ -1,6 +1,6 @@
 extends Node
 
-var event_manager
+var event_manager: EventManager
 var asset_loader
 var progression: Progression
 var map_manager
